@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mercati Spiegati — capire i CFD e i mercati finanziari</title>
+<meta name="description" content="Contenuti didattici sui mercati finanziari e sui CFD: come funzionano gli strumenti, cosa significano i termini, quali rischi comportano.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#151E28;
+  --ink-soft:#4A5766;
+  --paper:#FBFAF7;
+  --rule:#DCD8CF;
+  --accent:#2F6F6B;
+  --accent-deep:#1F4E4B;
+  --warn:#8C3A2B;
+  --warn-bg:#F6EAE6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:"IBM Plex Sans",system-ui,sans-serif;
+  font-size:17px;line-height:1.65;-webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:820px;margin:0 auto;padding:0 24px}
+a{color:var(--accent-deep)}
+h1,h2,h3{font-family:"Newsreader",Georgia,serif;font-weight:600;line-height:1.2;letter-spacing:-0.01em}
+
+/* barra rischio fissa in alto */
+.riskbar{
+  background:var(--warn);color:#fff;font-size:13px;line-height:1.5;
+  padding:10px 24px;text-align:center;
+}
+.riskbar strong{font-weight:600}
+
+header.hero{padding:72px 0 56px;border-bottom:1px solid var(--rule)}
+.brand{
+  font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:0.18em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 28px
+}
+h1{font-size:clamp(34px,6vw,54px);margin:0 0 20px;max-width:16ch}
+.lede{font-size:19px;color:var(--ink-soft);max-width:60ch;margin:0}
+
+section{padding:56px 0;border-bottom:1px solid var(--rule)}
+section:last-of-type{border-bottom:none}
+h2{font-size:clamp(25px,4vw,33px);margin:0 0 8px}
+.eyebrow{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--accent);margin:0 0 12px
+}
+p{margin:0 0 18px;max-width:66ch}
+ul{max-width:66ch;padding-left:20px}
+li{margin-bottom:10px}
+
+/* riquadro esempio numerico */
+.esempio{
+  background:#fff;border:1px solid var(--rule);border-left:3px solid var(--accent);
+  padding:22px 24px;margin:26px 0;
+}
+.esempio h3{font-size:19px;margin:0 0 10px}
+.esempio p:last-child{margin-bottom:0}
+.esempio .num{font-family:"IBM Plex Mono",monospace;font-weight:500}
+
+/* glossario */
+dl{margin:24px 0 0;max-width:66ch}
+dt{
+  font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:500;
+  letter-spacing:0.04em;color:var(--accent-deep);
+  padding-top:18px;border-top:1px solid var(--rule);margin-top:18px
+}
+dl>dt:first-of-type{border-top:none;margin-top:0;padding-top:0}
+dd{margin:6px 0 0;color:var(--ink-soft)}
+
+/* avviso grande */
+.avviso{
+  background:var(--warn-bg);border:1px solid #E2C9C1;padding:26px 28px;margin:8px 0 0;
+}
+.avviso .titolo{
+  font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:0.16em;
+  text-transform:uppercase;color:var(--warn);margin:0 0 12px;font-weight:500
+}
+.avviso p{margin:0 0 12px;color:#5A2A20}
+.avviso p:last-child{margin-bottom:0}
+
+footer{padding:48px 0 64px;font-size:14px;color:var(--ink-soft)}
+footer p{max-width:70ch;margin-bottom:14px}
+.sep{height:1px;background:var(--rule);margin:0 0 40px}
+</style>
+</head>
+<body>
+
+<div class="riskbar">
+  <strong>81% of retail investor accounts lose money when trading CFDs with this provider.</strong>
+  You should consider whether you can afford to take the high risk of losing your money.
+</div>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="brand">Mercati Spiegati</p>
+    <h1>Capire come funzionano i mercati, prima di tutto il resto.</h1>
+    <p class="lede">Contenuti didattici su strumenti finanziari, CFD e funzionamento delle piattaforme di negoziazione. Qui si spiega come funzionano le cose: non troverai indicazioni operative, previsioni o suggerimenti su cosa fare.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Che cos'è questo sito</p>
+    <h2>Un posto per studiare, non per ricevere consigli</h2>
+    <p>La maggior parte del materiale che si trova online sui mercati finanziari è pensata per convincere qualcuno a fare qualcosa. Questo sito ha uno scopo diverso: descrivere il funzionamento degli strumenti e della loro meccanica, con un linguaggio comprensibile a chi parte da zero.</p>
+    <p>Non vengono forniti segnali, raccomandazioni personalizzate, previsioni sull'andamento dei prezzi né valutazioni su singoli strumenti. Le decisioni di investimento sono responsabilità esclusiva di chi le prende e, se necessario, vanno discusse con un professionista abilitato.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Le basi</p>
+    <h2>Che cosa sono i CFD</h2>
+    <p>CFD sta per <em>contract for difference</em>, contratto per differenza. È un accordo fra due parti che regola la differenza fra il prezzo di uno strumento nel momento in cui il contratto viene aperto e il prezzo nel momento in cui viene chiuso.</p>
+    <p>La caratteristica che li distingue è che lo strumento sottostante non viene mai posseduto. Chi apre un CFD su un'azione non diventa azionista: non ha diritto di voto e non riceve dividendi nel modo in cui li riceve un azionista. Scambia soltanto la variazione di prezzo.</p>
+    <p>Da questo derivano due conseguenze pratiche. La prima è che si può prendere posizione sia al rialzo sia al ribasso, perché la differenza di prezzo funziona in entrambe le direzioni. La seconda è che il contratto ha una durata legata all'apertura e alla chiusura, e mantenerlo aperto nel tempo comporta dei costi.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Le basi</p>
+    <h2>La leva finanziaria</h2>
+    <p>La leva permette di controllare una posizione di valore superiore al capitale effettivamente impegnato. Se la leva è 1:30, con 1.000 euro si controlla una posizione da 30.000 euro. La somma versata prende il nome di margine.</p>
+    <p>È il concetto che più spesso viene frainteso, perché viene presentato come un moltiplicatore dei guadagni. In realtà è un moltiplicatore delle variazioni, in entrambe le direzioni.</p>
+
+    <div class="esempio">
+      <h3>Come si comporta la leva</h3>
+      <p>Posizione da <span class="num">30.000 €</span> aperta con un margine di <span class="num">1.000 €</span>, quindi leva <span class="num">1:30</span>.</p>
+      <p>Se il prezzo si muove dell'<span class="num">1%</span> a favore, la posizione varia di <span class="num">300 €</span>: sul capitale impegnato è il <span class="num">30%</span>.</p>
+      <p>Se il prezzo si muove dell'<span class="num">1%</span> in senso contrario, la perdita è <span class="num">300 €</span>: sempre il <span class="num">30%</span> del capitale impegnato.</p>
+      <p>Una variazione contraria del <span class="num">3,3%</span> azzera il margine versato. È il motivo per cui la leva alta riduce lo spazio di errore invece di aumentarlo.</p>
+    </div>
+
+    <p>Nell'Unione Europea la leva massima offerta agli investitori al dettaglio è limitata per regolamento, con soglie diverse a seconda dello strumento. È una misura introdotta proprio perché la leva elevata si è dimostrata la causa principale delle perdite rapide.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Le basi</p>
+    <h2>I costi che spesso non si contano</h2>
+    <p>Il prezzo di uno strumento non è un numero solo. Esiste un prezzo al quale si può comprare e uno, leggermente più basso, al quale si può vendere: la differenza fra i due si chiama spread ed è il costo immediato dell'apertura di una posizione.</p>
+    <ul>
+      <li><strong>Spread.</strong> Si paga all'apertura ed è tanto più rilevante quanto più breve è l'operazione. Si allarga nei momenti di bassa liquidità, per esempio alla riapertura settimanale.</li>
+      <li><strong>Costo di mantenimento notturno.</strong> Tenere aperta una posizione oltre la chiusura giornaliera comporta un addebito o un accredito, a seconda dello strumento e della direzione.</li>
+      <li><strong>Conversione valutaria.</strong> Se lo strumento è denominato in una valuta diversa da quella del conto, la conversione ha un costo.</li>
+      <li><strong>Inattività.</strong> Molti intermediari applicano una commissione ai conti fermi per lunghi periodi.</li>
+    </ul>
+    <p>Questi costi sono indicati nella documentazione contrattuale di ogni intermediario e vanno letti prima di aprire un conto, non dopo.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Glossario</p>
+    <h2>I termini che ricorrono</h2>
+    <dl>
+      <dt>Margine</dt>
+      <dd>La somma che l'intermediario trattiene come garanzia per tenere aperta una posizione a leva. Non è un costo: è capitale vincolato che torna disponibile alla chiusura.</dd>
+
+      <dt>Margin call</dt>
+      <dd>La richiesta di versare capitale aggiuntivo quando le perdite hanno eroso il margine sotto la soglia minima. Se non viene reintegrato, la posizione può essere chiusa automaticamente.</dd>
+
+      <dt>Stop loss</dt>
+      <dd>Un ordine che chiude la posizione al raggiungimento di un prezzo prestabilito. Limita l'esposizione, ma nei mercati che si muovono a scatti l'esecuzione può avvenire a un prezzo peggiore di quello impostato.</dd>
+
+      <dt>Liquidità</dt>
+      <dd>La facilità con cui uno strumento può essere scambiato senza spostarne il prezzo. Cambia molto nell'arco della giornata e della settimana.</dd>
+
+      <dt>Volatilità</dt>
+      <dd>L'ampiezza con cui il prezzo si muove in un dato periodo. Non indica una direzione, solo quanto il prezzo oscilla.</dd>
+
+      <dt>Slippage</dt>
+      <dd>La differenza fra il prezzo richiesto e quello effettivamente ottenuto. Aumenta quando il mercato si muove rapidamente o è poco liquido.</dd>
+    </dl>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Avvertenza</p>
+    <h2>I numeri da tenere presenti</h2>
+    <div class="avviso">
+      <p class="titolo">Risk warning</p>
+      <p><strong>81% of retail investor accounts lose money when trading CFDs with this provider. You should consider whether you can afford to take the high risk of losing your money.</strong></p>
+      <p>I CFD sono strumenti complessi e comportano un rischio elevato di perdere denaro rapidamente a causa della leva finanziaria. Prima di operare è necessario comprendere il funzionamento degli strumenti e valutare la propria capacità di sostenere il rischio di perdita del capitale.</p>
+      <p>Le percentuali di conti in perdita sono pubblicate dagli intermediari e aggiornate periodicamente: verificare sempre il dato corrente sul sito dell'intermediario.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="sep"></div>
+    <p><strong>Natura del sito.</strong> Mercati Spiegati pubblica esclusivamente contenuti a carattere didattico e informativo sul funzionamento degli strumenti finanziari. Non costituisce consulenza in materia di investimenti, non fornisce raccomandazioni personalizzate né sollecitazione al pubblico risparmio, e non è riconducibile ad attività riservate ai sensi della normativa vigente.</p>
+    <p><strong>Nessuna garanzia.</strong> I contenuti sono forniti a scopo informativo, senza garanzia di completezza o aggiornamento. Ogni decisione operativa è responsabilità esclusiva del lettore.</p>
+    <p><strong>Riservato ai maggiorenni.</strong> I contenuti non sono destinati a persone di età inferiore a 18 anni.</p>
+    <p>© 2026 Mercati Spiegati · info@mercatispiegati.it</p>
+  </div>
+</footer>
+
+</body>
+</html>
